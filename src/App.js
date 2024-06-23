@@ -5,18 +5,18 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import { Home } from './pages/Home';
-import MovieDetails from './pages/MovieDetails ';
+import { HomePage } from './pages/HomePage';
+import { MovieDetailsPage }from './pages/MovieDetailsPage';
 import NotFound from './component/NotFound';
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element:  <Home />,
+      element:  <HomePage />,
     },
     {
       path: "/details/:id",
-      element:  <MovieDetails />,
+      element:  <MovieDetailsPage />,
     },
     {
       path: '*',

@@ -27,7 +27,6 @@ const fetchInstance = async (url) => {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error(error);
         return null;
     }
 };
@@ -49,7 +48,7 @@ export const fetchAllMovies = async (params = {}) => {
 };
   
 
-export const fetchTopRatedMovies = async (params = {}) => {
+export const getTopRatedMovies = async (params = {}) => {
 
     const defaultParams = {
       language: 'en-US',
@@ -59,7 +58,12 @@ export const fetchTopRatedMovies = async (params = {}) => {
     const mergedParams = { ...defaultParams, ...params };
     const url = buildUrl('/movie/top_rated', mergedParams);
     const data = await fetchInstance(url);
-    return data ? data.results : [];
+    return data ? data : {
+        page: 1,
+        results: [],
+        total_pages: 1,
+        total_results: 0
+      };
 };
 
 export const getMovieDetails  = async (id,params = {}) => {
@@ -70,11 +74,22 @@ export const getMovieDetails  = async (id,params = {}) => {
 
     const mergedParams = { ...defaultParams, ...params };
     const url = buildUrl(`/movie/${id}`, mergedParams);
-    console.log('url',url )
     const data = await fetchInstance(url);
-    console.log('url', data )
     return data;
-    
 }
 
 
+
+export const getMoviesByTitle = async (title ,params = {}) => {
+
+    const defaultParams = {
+      language: 'en-US',
+      query: title,
+      ...params
+    };
+  
+    const mergedParams = { ...defaultParams, ...params };
+    const url = buildUrl('/search/movie', mergedParams);
+    const data = await fetchInstance(url);
+    return data ? data : [];
+};

@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { movieContext } from '../../context/movieContext';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const SearchByTitle = () => {
     const {
@@ -7,20 +8,36 @@ export const SearchByTitle = () => {
         setSearchTerm
     } = useContext(movieContext);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+
+;
+
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
     };
+
+    const handleSearchClick = () => {
+        if (location.pathname !== '/') {
+          navigate('/');
+        }
+     };
     
     return (
-        < >
+        <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
             <input
                 type="text"
                 placeholder="Search by title"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                className="mt-4 p-2 bg-gray-800 text-white rounded"
+                className="p-2 bg-gray-800 text-white flex-grow outline-none"
             />
-            <p className="mt-2 text-gray-400">Just filter the current result</p>
-        </>
+            <button
+                onClick={handleSearchClick}
+                className="p-2 bg-blue-500 text-white"
+            >
+                Search
+            </button>
+        </div>
     );
 }

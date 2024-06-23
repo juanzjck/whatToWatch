@@ -14,7 +14,6 @@ const fetchOptions = {
 const buildUrl = (path, params) => {
     const url = new URL(`${BASE_URL}${path}`);
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-    console.log('url', url.toString())
     return url.toString();
 };
 
@@ -51,7 +50,7 @@ export const fetchAllMovies = async (params = {}) => {
   
 
 export const fetchTopRatedMovies = async (params = {}) => {
-    console.log('params', params)
+
     const defaultParams = {
       language: 'en-US',
       ...params
@@ -62,3 +61,20 @@ export const fetchTopRatedMovies = async (params = {}) => {
     const data = await fetchInstance(url);
     return data ? data.results : [];
 };
+
+export const getMovieDetails  = async (id,params = {}) => {
+    const defaultParams = {
+        language: 'en-US',
+        ...params
+      };
+
+    const mergedParams = { ...defaultParams, ...params };
+    const url = buildUrl(`/movie/${id}`, mergedParams);
+    console.log('url',url )
+    const data = await fetchInstance(url);
+    console.log('url', data )
+    return data;
+    
+}
+
+

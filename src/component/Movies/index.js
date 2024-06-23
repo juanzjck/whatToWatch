@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { movieContext } from "../../context/movieContext";
 import { fetchTopRatedMovies } from "../../api";
+import { Link } from "react-router-dom";
 
 
 export const Movies = ()=> {
@@ -50,12 +51,15 @@ export const Movies = ()=> {
             <main className="p-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {filteredMovies.map(movie => (
-                    <div key={movie.id} className="bg-gray-800 p-4 rounded">
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="rounded mb-2"/>
-                    <h2 className="text-xl font-bold">{movie.title}</h2>
-                    <p className="text-sm">{movie.release_date}</p>
-                    {renderStars(movie.vote_average)}
-                    </div>
+                    <Link key={movie.id} to={`/details/${movie.id}`} className="bg-gray-800 p-4 rounded block">
+                        <div key={movie.id} className="bg-gray-800 p-4 rounded">
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="rounded mb-2"/>
+                        <h2 className="text-xl font-bold">{movie.title}</h2>
+                        <p className="text-sm">{movie.release_date}</p>
+                        {renderStars(movie.vote_average)}
+                        </div>
+                    </Link>
+     
                 ))}
                 </div>
             </main>

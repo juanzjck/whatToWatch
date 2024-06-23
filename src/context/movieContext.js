@@ -1,4 +1,4 @@
-const { createContext, useState, Children } = require("react");
+const { createContext, useState} = require("react");
 
 const movieContext = createContext({});
 

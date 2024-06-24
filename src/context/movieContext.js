@@ -1,5 +1,5 @@
 import { getMoviesByTitle, getTopRatedMovies } from "../api";
-
+import React from 'react';
 const { createContext, useState, useEffect, useRef} = require("react");
 
 const movieContext = createContext({});
@@ -77,7 +77,6 @@ const MovieContexProvider = ({children}) => {
                 setMovies,
                 page, 
                 setPage,
-                loadingMovie, 
                 loadingMovie, 
                 setLoadingMovie
             }

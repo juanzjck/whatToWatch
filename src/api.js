@@ -28,22 +28,6 @@ const fetchInstance = async (url) => {
 };
 
 
-export const fetchAllMovies = async (params = {}) => {
-    const defaultParams = {
-      include_adult: 'false',
-      include_video: 'false',
-      language: 'en-US',
-      page: '1',
-      sort_by: 'popularity.desc',
-    };
-  
-    const mergedParams = { ...defaultParams, ...params };
-    const url = buildUrl(mergedParams);
-    const data = await fetchInstance(url);
-    return data ? data.results : [];
-};
-  
-
 export const getTopRatedMovies = async (params = {}) => {
 
     const defaultParams = {

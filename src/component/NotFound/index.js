@@ -10,10 +10,10 @@ const NotFound = ({title, subTitle, onClickTryAgain}) => {
         <h1 className="text-4xl font-bold mb-4">{title}</h1>
         <p className="mb-4">{subTitle}</p>
         {
-            onClickTryAgain&&<button  className="p-2 bg-blue-500 text-white rounded-r" onClick={onClickTryAgain}>Clean Search</button>
+            onClickTryAgain&&<button  className="p-2 bg-[#313f56] text-white rounded-r" onClick={onClickTryAgain}>Clean Search</button>
         }
         {
-            !onClickTryAgain&&<Link to="/" className="text-blue-500 underline">Go Back to Home</Link>
+            !onClickTryAgain&&<Link to="/" className="text-blue-[#313f56] underline">Go Back to Home</Link>
         }
       </div>
     </div>

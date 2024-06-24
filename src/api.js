@@ -1,18 +1,15 @@
-// src/api.js
-const BASE_URL = 'https://api.themoviedb.org/3';
-const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ODEwOGZiOTcyYTVmZGJjZjc0NzMyYTc1ZjJhOWNiZiIsInN1YiI6IjY2NzU5NmQzOTQ1ZjY0NTgxMTZjNzVjYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EQhlEd9FRT3CZsXYlxdIhREpZzkl90xk1FZjX8xXZu8';
-
 
 const fetchOptions = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${API_KEY}`
+      Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
     }
 };
 
 const buildUrl = (path, params) => {
-    const url = new URL(`${BASE_URL}${path}`);
+    console.log('process.env.REACT_APP_BASE_URL',process.env.REACT_APP_BASE_URL, process.env.REACT_APP_API_KEY)
+    const url = new URL(`${process.env.REACT_APP_BASE_URL}${path}`);
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
     return url.toString();
 };

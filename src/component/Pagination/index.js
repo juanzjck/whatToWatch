@@ -1,6 +1,4 @@
-// src/components/Pagination.js
 import React, { useState } from 'react';
-import { fetchAllMovies } from '../../api';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const [startPage, setStartPage] = useState(1);
@@ -52,7 +50,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         <button
           key={i}
           onClick={() => handlePageClick(i)}
-          className={`px-3 py-1 rounded ${i === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-800'} mx-1`}
+          className={` px-3 py-1 rounded ${i === currentPage ? 'bg-[#313f56] text-white' : 'bg-gray-300 text-gray-800'} mx-1`}
         >
           {i}
         </button>
@@ -66,14 +64,14 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       <button
         onClick={handlePrev}
         disabled={currentPage === 1}
-        className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
+        className="bg-[#313f56] text-white px-4 py-2 rounded disabled:bg-gray-300"
       >
         Previous
       </button>
       {startPage > 1 && (
         <button
           onClick={handleMorePrev}
-          className="bg-blue-500 text-white px-3 py-1 rounded mx-1"
+          className="bg-[#313f56] text-white px-3 py-1 rounded mx-1"
         >
           &laquo;
         </button>
@@ -82,7 +80,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       {startPage + pageSize <= totalPages && (
         <button
           onClick={handleMoreNext}
-          className="bg-blue-500 text-white px-3 py-1 rounded mx-1"
+          className="bg-[#313f56] text-white px-3 py-1 rounded mx-1"
         >
           &raquo;
         </button>
@@ -90,7 +88,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       <button
         onClick={handleNext}
         disabled={currentPage === totalPages}
-        className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
+        className="bg-[#313f56] text-white px-4 py-2 rounded disabled:bg-gray-300"
       >
         Next
       </button>

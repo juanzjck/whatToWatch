@@ -8,7 +8,6 @@ const fetchOptions = {
 };
 
 const buildUrl = (path, params) => {
-    console.log('process.env.REACT_APP_BASE_URL',process.env.REACT_APP_BASE_URL, process.env.REACT_APP_API_KEY)
     const url = new URL(`${process.env.REACT_APP_BASE_URL}${path}`);
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
     return url.toString();

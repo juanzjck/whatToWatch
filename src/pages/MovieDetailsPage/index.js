@@ -1,9 +1,8 @@
-// src/MovieDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../api';
 import NotFound from '../../component/NotFound';
-import Loading from '../../component/LoadingPage';
+import Loading from '../../component/Loading';
 import MovieDetails from '../../component/MovieDetails';
 import { Header } from '../../component/Header';
 import { Footer } from '../../component/Footer';

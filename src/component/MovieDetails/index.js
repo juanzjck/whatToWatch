@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../api';
 import NotFound from '../../component/NotFound';
-import Loading from '../../component/LoadingPage';
+import Loading from '../../component/Loading';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -54,11 +54,11 @@ const MovieDetails = () => {
 
   return (
     <div className=" min-h-screen p-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto" >
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
           alt={movie.title}
-          className="w-full rounded mb-4"
+          className="w-full rounded mb-4 bg-fixed"
         />
         <div className="flex items-center mb-2">
           <strong>Status:</strong>

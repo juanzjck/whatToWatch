@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { movieContext } from '../../context/movieContext';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ export const SearchByTitle = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-;
+
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
@@ -34,7 +34,7 @@ export const SearchByTitle = () => {
             />
             <button
                 onClick={handleSearchClick}
-                className="p-2 bg-blue-500 text-white"
+                className="p-2 bg-[#313f56] text-white"
             >
                 Search
             </button>

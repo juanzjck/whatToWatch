@@ -3,6 +3,7 @@ import { movieContext } from "../../context/movieContext";
 import { getTopRatedMovies } from "../../api";
 import { Link } from "react-router-dom";
 import NotFound from "../NotFound";
+import { Pagination } from "../Pagination";
 
 
 export const Movies = ()=> {
@@ -63,23 +64,13 @@ export const Movies = ()=> {
                 ))}
                 </div>
             </main>
-            <div className="flex justify-center items-center mt-4">
-                <button 
-                onClick={() => handlePageChange(page - 1)} 
-                disabled={page === 1}
-                className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
-                >
-                    Previous
-                </button>
-                <span className="mx-4 text-lg">Page {page} of {movies.total_pages}</span>
-                <button 
-                onClick={() => handlePageChange(page + 1)}
-                disabled={page === movies.total_pages}
-                className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
-                >
-                    Next
-                </button>
-            </div>
+            <Pagination
+                currentPage={page}
+                totalPages={movies.total_pages}
+                onPageChange={handlePageChange}
+            >
+
+            </Pagination>
         </>
  
 

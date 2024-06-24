@@ -6,6 +6,7 @@ import NotFound from '../../component/NotFound';
 import Loading from '../../component/LoadingPage';
 import MovieDetails from '../../component/MovieDetails';
 import { Header } from '../../component/Header';
+import { Footer } from '../../component/Footer';
 
 export const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -34,6 +35,7 @@ export const MovieDetailsPage = () => {
     <>
       <Header></Header>
       <MovieDetails></MovieDetails>
+      <Footer/>
     </>
   );
 };

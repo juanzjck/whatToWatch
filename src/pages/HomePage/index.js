@@ -5,6 +5,7 @@ import { SearchByTitle } from '../../component/SearchByTitle';
 import { useContext } from 'react';
 import Loading from '../../component/LoadingPage';
 import { movieContext } from '../../context/movieContext';
+import { Footer } from '../../component/Footer';
 
 export const HomePage = () => {
     const {
@@ -21,6 +22,7 @@ export const HomePage = () => {
                 <SearchByTitle></SearchByTitle>
             </Header>
             <Movies></Movies>
+            <Footer/>
         </>
            
     );

@@ -39,7 +39,7 @@ export const Movies = ()=> {
     if(movies.results.length === 0 && searchTerm != '') {
         return (
             <NotFound 
-                title={`There are't anye movie with the title "${searchTerm}"`}
+                title={`There are't any movie with the title "${searchTerm}"`}
                 subTitle='Try with other title.'
                 onClickTryAgain={()=> setSearchTerm('')}
             >

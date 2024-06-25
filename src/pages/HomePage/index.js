@@ -1,7 +1,6 @@
 import React from 'react';
 import { Movies } from '../../component/Movies';
 import { Header } from '../../component/Header';
-import { SearchByTitle } from '../../component/SearchByTitle';
 import { useContext } from 'react';
 import Loading from '../../component/Loading';
 import { movieContext } from '../../context/movieContext';
@@ -18,7 +17,7 @@ export const HomePage = () => {
     return (
         <>
             <Header />
-            <Movies></Movies>
+            <Movies/>
             <Footer/>
         </>
            

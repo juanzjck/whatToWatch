@@ -33,7 +33,7 @@ export const MovieDetailsPage = () => {
   return (
     <>
       <Header />
-      <MovieDetails></MovieDetails>
+      <MovieDetails/>
       <Footer/>
     </>
   );

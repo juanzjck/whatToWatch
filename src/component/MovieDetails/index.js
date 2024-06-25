@@ -1,4 +1,3 @@
-// src/MovieDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '../../api';
@@ -46,7 +45,6 @@ const MovieDetails = () => {
         return '🇰🇷';
       case 'zh':
         return '🇨🇳';
-      // Add more languages as needed
       default:
         return '🏳️';
     }

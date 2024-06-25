@@ -17,9 +17,7 @@ export const HomePage = () => {
 
     return (
         <>
-            <Header>
-                <SearchByTitle></SearchByTitle>
-            </Header>
+            <Header />
             <Movies></Movies>
             <Footer/>
         </>

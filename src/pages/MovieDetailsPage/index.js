@@ -32,7 +32,7 @@ export const MovieDetailsPage = () => {
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <MovieDetails></MovieDetails>
       <Footer/>
     </>
